@@ -47,6 +47,12 @@
             android:layout_height="wrap_content"
             android:text="service测试页面" />
 
+        <Button
+            android:id="@+id/btn_connect"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="测试网络连接" />
+
         <EditText
             android:id="@+id/edit_text"
             android:layout_width="match_parent"
