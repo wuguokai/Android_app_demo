@@ -9,6 +9,17 @@
     <!-- 获取WiFi状态 -->
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <!--振动权限-->
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.READ_SMS"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+
+    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
 
     <application
         android:allowBackup="true"
@@ -24,26 +35,43 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.ThreadRandomServiceDemoActivity"/>
+        <activity android:name=".activity.ThreadRandomServiceDemoActivity" />
+
         <receiver android:name=".broadcast.MyBroadcastReceiver">
             <intent-filter>
-                <action android:name="com.example.wuguokai.firstapp.activity.MainActivity"/>
+                <action android:name="com.example.wuguokai.firstapp.activity.MainActivity" />
             </intent-filter>
         </receiver>
+
         <service android:name=".service.TestService">
-          <!--  <intent-filter>
+
+            <!--
+            <intent-filter>
                 <action android:name="com.wuguokai.firstapp.TestService"/>
-            </intent-filter>-->
+            </intent-filter>
+            -->
         </service>
-        <service android:name=".service.RandomService"/>
+        <service android:name=".service.RandomService" />
+
         <activity android:name=".activity.SecondActivity">
-            <!--<intent-filter>
+
+            <!--
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 &lt;!&ndash;下面这句可以让app不显示图标&ndash;&gt;
                 &lt;!&ndash;<data android:host="AuthActivity" android:scheme="com.example.wuguokai"/>&ndash;&gt;
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>-->
+            </intent-filter>
+            -->
         </activity>
+        <activity
+            android:name=".activity.LoginActivity"
+            android:label="@string/title_activity_login" />
+        <activity
+            android:name=".activity.FullscreenActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_fullscreen"
+            android:theme="@style/FullscreenTheme"></activity>
     </application>
 
 </manifest>

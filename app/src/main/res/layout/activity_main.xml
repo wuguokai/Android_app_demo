@@ -52,6 +52,22 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="测试网络连接" />
+        <Button
+            android:id="@+id/btn_notification"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="测试系统通知" />
+        <Button
+            android:id="@+id/btn_phoneinfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="读取系统信息" />
+        <Button
+            android:id="@+id/btn_sqlite"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="使用安卓数据库" />
+
 
         <EditText
             android:id="@+id/edit_text"
