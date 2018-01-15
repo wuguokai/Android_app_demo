@@ -19,6 +19,7 @@ import android.os.StrictMode;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.NotificationCompat;
+import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -156,6 +157,20 @@ public class MainActivity extends AppCompatActivity {
         phoneInfoButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String osVersion = android.os.Build.MODEL + ", "
+                        + Build.VERSION.SDK_INT + ", "
+                        + android.os.Build.VERSION.RELEASE;
+                System.out.println(osVersion);
+
+                DisplayMetrics metrics=new DisplayMetrics();
+                getWindowManager().getDefaultDisplay().getMetrics(metrics);
+                int widthPixels=metrics.widthPixels;
+                int heightPixels=metrics.heightPixels;
+                String screenData = widthPixels+" x " +heightPixels;
+                System.out.println(screenData);
+
+                editText.setText(osVersion+"  " +screenData);
+
                 //判断sdk是否支持
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                     //判断是否有该权限
